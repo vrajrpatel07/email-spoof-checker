@@ -1,11 +1,33 @@
-from fastapi import FastAPI, Form
+# main.py
+from fastapi import FastAPI, HTTPException, Form
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import re
+from typing import List
 
-app = FastAPI(title="User-Friendly Email Spoof Checker")
+app = FastAPI(title="Email Spoof Checker API")
 
-# Helper function to extract key authentication results
-def parse_email_headers(raw_headers: str):
+# Configure CORS so your frontend can call the API
+origins = [
+    "http://localhost:3000",  # local React dev
+    "https://your-netlify-site.netlify.app"  # replace with your Netlify URL
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Root endpoint
+@app.get("/")
+def root():
+    return {"message": "Email Spoof Checker is live! Use /docs to test or POST to /analyze"}
+
+# Helper function to parse email headers and detect spoofing
+def parse_email_headers(raw_headers: str) -> dict:
     result = {
         "spf": "unknown",
         "dkim": "unknown",
@@ -39,16 +61,17 @@ def parse_email_headers(raw_headers: str):
     # Optional: extract URLs for phishing check
     urls = re.findall(r'https?://[^\s<>"]+', raw_headers)
     for url in urls:
-        # Simple example: mark suspicious if domain is unusual (can be extended with blacklist)
+        # mark suspicious if domain is unusual (can be extended with a blacklist)
         if "gmail.com" not in url.lower():  
             result["phishing_links"].append(url)
 
     return result
 
+# Main endpoint to analyze headers
 @app.post("/analyze")
 async def analyze_email(raw_headers: str = Form(..., description="Paste full Gmail headers here")):
-    """
-    Analyze email headers pasted by the user. Returns spoof/legit status.
-    """
+    if not raw_headers.strip():
+        raise HTTPException(status_code=400, detail="No headers provided")
+    
     analysis_result = parse_email_headers(raw_headers)
     return JSONResponse(content=analysis_result)
