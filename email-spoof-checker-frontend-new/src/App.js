@@ -19,7 +19,7 @@ function App() {
       const formData = new URLSearchParams();
       formData.append("raw_headers", rawHeaders);
 
-      const response = await fetch("https://YOUR_RENDER_BACKEND_URL/analyze", {
+      const response = await fetch("https://email-spoof-checker.onrender.com/analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
