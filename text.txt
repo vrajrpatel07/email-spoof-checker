@@ -1,0 +1,11 @@
+python -m uvicorn backend.main:app --reload  for reload fastapi server
+
+venv\Scripts\activate
+venv\Scripts\Activate.ps1 for activating python virtual env
+http://127.0.0.1:8000/redoc alternate
+
+http://127.0.0.1:8000/
+
+for endless loop Exclude venv from reload watch
+Run uvicorn with --reload-exclude so it ignores your virtualenv:
+"python -m uvicorn backend.main:app --reload --reload-exclude venv"

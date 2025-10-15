@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.App {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.status-row {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.checks p, .malicious p {
+  margin: 5px 0;
+}
+
+ul {
+  margin: 5px 0 10px 20px;
+  padding: 0;
+}
+
+h3 {
+  margin-top: 15px;
+  color: #333;
+}
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.error-msg {
+  color: #dc3545;
+  font-weight: bold;
+}

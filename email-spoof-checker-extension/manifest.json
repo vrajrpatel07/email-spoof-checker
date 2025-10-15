@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Email Spoof Checker",
+  "version": "1.0",
+  "description": "Check if an email is spoofed or impersonated.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
