@@ -5,6 +5,8 @@ from fastapi.responses import JSONResponse
 import re
 import base64
 from typing import List, Dict, Any
+import os
+import uvicorn
 
 app = FastAPI(title="Email Spoof Checker")
 
@@ -182,10 +184,7 @@ async def analyze(raw_headers: str = Form(...)):
         dkim_result = check_dkim(text)
         dmarc_result = check_dmarc(text)
 
-        if spf_result == "pass" and dkim_result == "pass" and dmarc_result == "pass":
-            status = "Legit"
-        else:
-            status = "Spoof"
+        status = "Legit" if spf_result == "pass" and dkim_result == "pass" and dmarc_result == "pass" else "Spoof"
 
         mal = analyze_for_malicious(text)
 
@@ -205,3 +204,10 @@ async def analyze(raw_headers: str = Form(...)):
         raise he
     except Exception as e:
         return JSONResponse(content={"error": "Internal error", "detail": str(e)}, status_code=500)
+
+# --------------------------------------------------------------------------- #
+#  RUN SERVER (for Render)
+# --------------------------------------------------------------------------- #
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)

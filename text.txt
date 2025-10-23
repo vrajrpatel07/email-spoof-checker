@@ -9,3 +9,18 @@ http://127.0.0.1:8000/
 for endless loop Exclude venv from reload watch
 Run uvicorn with --reload-exclude so it ignores your virtualenv:
 "python -m uvicorn backend.main:app --reload --reload-exclude venv"
+
+cd email-spoof-checker-frontend
+
+npm start
+
+npm run build #run first then upload in netlify
+
+
+git status
+
+git add src/reportWebVitals.js path with file name after any update
+
+git commit -m "Add reportWebVitals.js to fix build error"
+
+git push origin main

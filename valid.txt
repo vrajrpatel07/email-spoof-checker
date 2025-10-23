@@ -163,3 +163,104 @@ Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: 7bit
 
 message=you succeeded
+
+
+
+
+
+threat
+
+Delivered-To: vrajpatel2117@gmail.com
+Received: by 2002:a05:7301:4143:b0:29d:1dfd:8418 with SMTP id pg3csp670622dyb;
+        Tue, 14 Oct 2025 22:13:02 -0700 (PDT)
+X-Received: by 2002:a05:6830:3148:b0:797:42d1:d24a with SMTP id 46e09a7af769-7c0df6d926emr15281192a34.3.1760505182503;
+        Tue, 14 Oct 2025 22:13:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1760505182; cv=none;
+        d=google.com; s=arc-20240605;
+        b=KjMqrxLI+0warMiqDrsTD+CRiTzo274JCs6RPVgS8UjIlIjf/kVOt6txCkyM9VM+yA
+         kdnDoJtxweePA/7yDlga0UItTP4W6PHwIchZsEaw+8NrUjtyNBy4G2zmpgHzElGuqLND
+         xdV0HQFY05rEiqA4cb4B4dKa13jMqt0bM21FR/1mGD32amsh4Yrs63RRMh5x26+CMvWF
+         PF04mRWBbL/JKDoyDiRNgzySgmvGWkIQ60FPzAIhRUOCHuWFyq8j9xDV5tDZQpam2ckn
+         nHyFr1vR1eZpLsGgNIm6UNFJ+5jOkv3xOoQxkRNmbW3zd/e8xuDEDM0QEh+my6WrDTA1
+         Fvxg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=kktkULSqe5KAYYmiJdS6eCrkgHwREd1IjwE2hJavMGo=;
+        fh=kZFZPbbuvD8ycd7N+fOBL2nlFNqw50a5g2T3wkkTU7Y=;
+        b=WL6fp6AJ+Fwo6MQByGu6/SK9kmmyGmKJ/LjMoAMTr1XuKHgssI70tk1zHbVapiNsva
+         6/Wx2QLcRml8VOHv+MWXQ5Vd3aqJbJPmMHPHE0zyja8jH+2BPiVGec1Tc75Igs2e5PVw
+         pMxi0JrfcydBlv4UZDjLlnD5uT/kRyfAYEGs5bhsxkXeO1Uedl2o3LfjR0YzoXLDjM73
+         Pf2sbB8/6jqfVtpx2G+Dz49gtHtZyoI20l2HJrGcNulggj7SdhHxAB8AxPp83sri9/SI
+         PxyjLCTwBx2v8WP6ih30rdq9JFQ13Io6WzlV6P82yd+HRixI7I0kOZLrswGhqYK3zXSR
+         EAaw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=axTxkx0c;
+       spf=pass (google.com: domain of vrajp2809@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vrajp2809@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <vrajp2809@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 46e09a7af769-7c0f900974dsor6992379a34.6.2025.10.14.22.13.02
+        for <vrajpatel2117@gmail.com>
+        (Google Transport Security);
+        Tue, 14 Oct 2025 22:13:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of vrajp2809@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=axTxkx0c;
+       spf=pass (google.com: domain of vrajp2809@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=vrajp2809@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1760505182; x=1761109982; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=kktkULSqe5KAYYmiJdS6eCrkgHwREd1IjwE2hJavMGo=;
+        b=axTxkx0cuJR/GK0ihIz5NwLPGDMCVrNHn+tSlqE7XwNwMiHtprMVrVtMn/KMTHChNu
+         3jppG00sLGryVNQ9NwSVniD7eTmbjBPWug25jxkiPTHXyxTZSvmAzQ16DyATXXQJ1OKW
+         gjB7mclY9PQIPjam7HwSq/uslYiTolECFVAn/OQP+06lWltIhnIYcT8enjHP+GuWqokE
+         IAnk+d3hwPL/ejqF3pfPmzWnj7x5+O/R1q99Ua2gnkw6SdkvpiK/FL1zWX1p/kih5HvD
+         zMEPacK5qKwAsbYB2gKdx18nYhjPcva9l4QsBPXwLnZQUeHk34nanZWlImvbUkGiu4sF
+         mimw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760505182; x=1761109982;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kktkULSqe5KAYYmiJdS6eCrkgHwREd1IjwE2hJavMGo=;
+        b=VO8fUDIbDg4sVAZvBN21sHsVx84ADw5yE/i2SV0Y2DBAk9jfMKRTunC9WW99QkywRN
+         LL+FpGHzXToWjKjWUPRmhcwY+VFGMxMsASJW+r8/KIwLjgHpPz4yGKOpwJJgpef21Pie
+         q1sYMIQ5DwggFOlB0xSMC3AmBGk5Gkyu7y4P5ZY0jSILud0y3UxZTx+/7SR5+xLqnKnz
+         ZjfwMzyd+P2qBBHwOXrrfiLr1IODwQKZjTm6yxXsE7RDQacz1rRW5zZbmogJHpC9CwpF
+         8TGPAKtl9MtpdQleqnBzrhPi2qw+7d6BZ7/1g+b2dYGH302P7wODOo3V2NEsLRxQ/g6g
+         a+ew==
+X-Gm-Message-State: AOJu0YxspITVb5GSvJYRkWg9PbjG+Y12Dq4gf3oOhDbvcN3P686A3yrX JuVMqw55EOKCzOtep4e0Rkb9UgRx6QxK4XcSFqcwb5AosfOvYhrrFayT5HmrATRIjjZ17TQacvD ygxySlPe9MzBrdIDX1SYGcJC5nAPt44/TO+1J
+X-Gm-Gg: ASbGncvFxO4X3bylLzyAlV79tNbPgRBAf0gPZmhRP43TPOtGus8XGpWG6h63bOSAije ev5tNNo11TvT5bNrvQYuoeBWhOPJQLGAPuxjZ6D9blWKqOKzkq0DPIxKpgyzJXqumydMkLl/WL7 HQPPm72CgPe5nqvfecV3EI/y6D5z4JhcpblxjviIvcLhmqvIkefpVIgz45JvS/coBqsuo5rfWhK ojorZOe/ocDKIXgMzMtbvKwUMW10LbtQvOrYKvqKBRTjHkt5wtXYVh1nIy9VbWUaqI0qfmoCypF FX24
+X-Google-Smtp-Source: AGHT+IH+jrlFJ6NweFMGiaTIKUV17MYWVhkfmDmPRdwQLUp8O3Bbi/7/Sb+Pn/Ra8S6SE+j3RRbhIan4CFMD7b7rMl0=
+X-Received: by 2002:a05:6870:959b:b0:343:a20a:3fd5 with SMTP id 586e51a60fabf-3c0fa370eb5mr13394137fac.40.1760505182015; Tue, 14 Oct 2025 22:13:02 -0700 (PDT)
+MIME-Version: 1.0
+From: vraj patel <vrajp2809@gmail.com>
+Date: Wed, 15 Oct 2025 10:42:54 +0530
+X-Gm-Features: AS18NWDQhNA7N1WuA41NIDNvoJL9asoay0nvnxykT1ISrBTZo-iixWf9sxeve2I
+Message-ID: <CAAXgDYcapJfDVhinCdBJyscv5u=zjCTG2gg2_w+5-ydrkFSM3A@mail.gmail.com>
+Subject: important
+To: Vraj Patel <vrajpatel2117@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000ffd5f506412b8dd1"
+
+--000000000000ffd5f506412b8dd1
+Content-Type: text/plain; charset="UTF-8"
+
+Hi vraj,
+
+I have private photos of you. If you do not pay $1000 to
+wallet 98981234@oksbi within 48 hours, I will leak them.
+
+--000000000000ffd5f506412b8dd1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><br></div><div dir=3D"ltr">Hi vraj,<br><b=
+r>I have private photos of you. If you do not pay $1000=C2=A0to wallet=C2=
+=A098981234@oksbi within 48 hours, I will leak them.</div>
+</div>
+
+--000000000000ffd5f506412b8dd1--
